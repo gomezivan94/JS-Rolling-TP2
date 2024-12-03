@@ -13,7 +13,7 @@ if (isNaN(edad)){
 
 // EJERCICIO 2
 
-let nota;
+/* let nota;
 
 do {
     let entrada = prompt("Ingrese una nota del 0 al 10");
@@ -57,4 +57,44 @@ do {
     }
 
 
+} while(confirm("Desea continuar?")) */
+
+// EJERCICIO 3
+
+/* let resultado = '';
+
+do {
+    let palabra = prompt("Ingresa una palabra").trim();
+
+    if(palabra === null){
+        alert("Ingresa una palabra");
+        break;
+    } else if(resultado === ''){
+        resultado = palabra;
+    } else {
+        resultado = resultado + '-' + palabra;
+    }
+
+
 } while(confirm("Desea continuar?"))
+
+document.write(resultado || "no se ingresaron palabras"); */
+
+// EJERCICIO 4
+
+let suma = 0;
+
+do {
+    let numero = (prompt("Ingrese un numero"))
+
+    if(numero === null){
+        break;
+    } else if (!isNaN(numero) && numero.trim() !== ''){
+        suma += +(numero);
+    } else {
+        alert(`${numero} no es un numero valido`)
+    }
+
+} while (true)
+
+document.write('total: ' + suma)
