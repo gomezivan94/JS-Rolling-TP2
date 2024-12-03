@@ -13,20 +13,48 @@ if (isNaN(edad)){
 
 // EJERCICIO 2
 
-let nota = parseInt(prompt("Ingrese su nota"))
+let nota;
 
-if (isNaN(nota) || nota < 0 || nota > 10) {
-    alert("Por favor ingresa una nota valida entre 0 y 10");
-} else {
-    if (nota >= 9) {
-        alert("Calificacion: Excelente");
-    } else if (nota >= 7) {
-        alert("Calificacion: Muy bien");
-    } else if (nota >= 5) {
-        alert("Calificacion: Bien");
-    } else if (nota >= 3) {
-        alert("Calificacion: Suficiente");
-    } else {
-        alert("Calificacion: Insuficiente");
+do {
+    let entrada = prompt("Ingrese una nota del 0 al 10");
+
+    if(entrada === null || entrada == ''){
+        alert("No se ingreso ninguna nota")
+        break;
     }
-}
+
+    nota = +(entrada);
+
+    if(isNaN(nota)){
+        alert("Ingresa un numero valido")
+    } else if(nota < 0 || nota > 10){
+        alert("Numero invalido")
+    } else {
+        switch(nota){
+            case 0:
+            case 1:
+            case 2:
+            alert("Muy deficiente")
+            break;
+            case 3:
+            case 4:
+            alert("Insuficiente")
+            break;
+            case 5:
+            case 6:
+            alert("suficiente")
+            break;
+            case 7:
+            alert("Bien")
+            break;
+            case 8:
+            case 9:
+            alert("Notable")
+            break;
+            case 10:
+            alert("Sobresaliente")
+        }
+    }
+
+
+} while(confirm("Desea continuar?"))
